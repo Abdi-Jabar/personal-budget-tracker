@@ -1,64 +1,45 @@
-# Personal Budget & Expense Tracker
+# Personal Budget Tracker
 
 ## Project Overview
+The Personal Budget Tracker is a web project designed to present income and expense information in a clear and organised layout.
 
-The Personal Budget & Expense Tracker is an HTML and CSS project designed to help users organize and view their daily expenses.
+## Week 3: Visual Identity Design
+This week, I improved the visual appearance of the existing Budget Tracker using CSS.
 
-This project was developed as part of the Week 2 HTML and CSS technical coding challenge.
+### Design Improvements
 
-## Technologies Used
+**1. Colour Palette**
+- Primary colour: Navy blue (`#16324F`)
+- Secondary colour: Blue (`#2563EB`)
+- Accent colour: Teal (`#0F766E`)
+- Background colour: Light grey (`#F4F7FA`)
+- Card colour: White (`#FFFFFF`)
 
-- HTML5
-- CSS3
-- Visual Studio Code
-- Git and GitHub
+**2. Typography**
+- Poppins for headings.
+- Inter for body text and form elements.
+- Google Fonts used to improve readability and visual consistency.
 
-## Project Features
+**3. Form and Table Styling**
+- Styled the existing expense form.
+- Added consistent input and button styling.
+- Styled the expense table with a coloured header.
+- Added alternating row colours and hover styling.
 
-### 1. Expense Form
-The form allows users to enter:
-- Expense name
-- Expense amount
-- Expense category
-
-The category dropdown contains Food, Transport, Rent, Entertainment, and Other.
-
-### 2. Expense Table
-The table displays sample expense records using:
-- Name
-- Amount
-- Category
-- Date
-
-It uses proper HTML table structure, including thead, tbody, tr, th, and td.
-
-### 3. Multimedia Content
-The project includes a budget tracker logo and an embedded YouTube budgeting video.
-
-### 4. Interactive Elements
-The project includes a collapsible instructions section using details and summary elements.
-
-### 5. Advanced CSS Selectors
-The stylesheet demonstrates:
-- Descendant selectors
-- Direct child selectors
-- nth-child() pseudo-class
-- Negation pseudo-class
-- Focus pseudo-class
-- Hover pseudo-class
+**4. CSS Box Model**
+- Applied margins and padding for spacing.
+- Added borders and rounded corners.
+- Used separate card styling for the page heading, expense form and expense table.
 
 ## Project Files
+- `index.html` – Existing page structure.
+- `style.css` – CSS visual design and styling.
+- `README.md` – Project documentation.
 
-- index.html - Contains the structure and content of the website.
-- style.css - Controls the design, colors, layout, and styling.
-- README.md - Explains the project and its features.
+## Technologies Used
+- HTML
+- CSS
+- Google Fonts
 
 ## Project Status
-
-Week 2 HTML and CSS development completed.
-
-The Add Expense button is a visual element only. JavaScript functionality will be introduced in a later stage.
-
-## Author
-
-Abdijabar Jabar
+Week 3 visual identity design completed.
