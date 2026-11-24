@@ -1,22 +1,63 @@
-/* General Page Styling */
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
-    margin: 0;
-    padding: 20px;
-    color: #333;
+
+/* COLOR PALETTE */
+:root {
+    --primary-color: #16324F;
+    --secondary-color: #2563EB;
+    --accent-color: #0F766E;
+    --accent-hover: #115E59;
+    --background-color: #F4F7FA;
+    --card-color: #FFFFFF;
+    --text-color: #334155;
+    --border-color: #DCE3EA;
+    --alternate-row: #EFF6FF;
 }
 
 
-/* Main Header */
+/* GENERAL PAGE STYLING */
+* {
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 30px;
+    line-height: 1.6;
+}
+
+
+/* HEADINGS */
+h1,
+h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 22px;
+}
+
+
+/* PAGE HEADING CARD */
 .main-header {
+    background-color: var(--card-color);
     text-align: center;
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 10px;
-    margin-bottom: 25px;
+    padding: 30px;
+    margin: 0 auto 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(22, 50, 79, 0.06);
 }
 
 .main-header img {
@@ -24,75 +65,90 @@ body {
     margin: 0 auto 10px;
 }
 
+.main-header p {
+    margin-bottom: 0;
+}
 
-/* Section Styling */
 
-section {
-    background-color: white;
-    padding: 25px;
+/* ADD EXPENSE FORM CARD */
+.add-expense-section {
+    background-color: var(--card-color);
+    padding: 30px;
     margin-bottom: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-h1 {
-    color: #1565c0;
-}
-
-h2 {
-    color: #1976d2;
-}
-
-
-/* Add Expense Form */
-
-.add-expense-section form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(22, 50, 79, 0.06);
 }
 
 .add-expense-section > h2 {
     margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.add-expense-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--primary-color);
 }
 
 input:not([type="submit"]),
 select {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100%;
+    padding: 13px;
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
+    color: var(--text-color);
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
 }
-
-
-/* Input Focus Selector */
 
 input:focus,
 select:focus {
-    outline: 2px solid #1976d2;
-    border-color: #1976d2;
+    outline: 2px solid var(--secondary-color);
+    border-color: var(--secondary-color);
 }
 
 
-/* Add Expense Button */
-
+/* ADD EXPENSE BUTTON */
 button {
-    background-color: #1976d2;
+    background-color: var(--accent-color);
     color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 13px;
     margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0d47a1;
+    background-color: var(--accent-hover);
 }
 
 
-/* Expense Table */
+/* EXPENSE TABLE CARD */
+.expenses-section {
+    background-color: var(--card-color);
+    padding: 30px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(22, 50, 79, 0.06);
+}
+
+.expenses-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
 
 .expenses-section table {
     width: 100%;
@@ -102,55 +158,53 @@ button:hover {
 
 .expenses-section th,
 .expenses-section td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    border: 1px solid var(--border-color);
+    padding: 14px;
     text-align: left;
-}
-
-
-/* Table Header */
-
-.expenses-section th {
-    background-color: #1976d2;
-    color: white;
-}
-
-
-/* Alternating Table Rows */
-
-.expenses-section tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-
-/* Table Hover Effect */
-
-.expenses-section tbody tr:hover {
-    background-color: #dbeafe;
-}
-
-
-/* Descendant Selector */
-
-.expenses-section td {
     font-size: 14px;
 }
 
+.expenses-section th {
+    background-color: var(--primary-color);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
 
-/* Details Section */
+.expenses-section tr:nth-child(even) {
+    background-color: var(--alternate-row);
+}
+
+.expenses-section tbody tr:hover {
+    background-color: #DBEAFE;
+}
+
+
+/* INSTRUCTIONS SECTION */
+.instructions-section {
+    background-color: var(--card-color);
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+}
 
 .instructions-section summary {
     cursor: pointer;
-    font-weight: bold;
-    color: #1976d2;
+    font-weight: 600;
+    color: var(--secondary-color);
     padding: 10px;
 }
 
 
-/* Video Section */
-
+/* VIDEO SECTION */
 .video-section {
+    background-color: var(--card-color);
     text-align: center;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
 }
 
 .video-section iframe {
@@ -159,10 +213,34 @@ button:hover {
 }
 
 
-/* Footer */
-
+/* FOOTER */
 footer {
     text-align: center;
     padding: 15px;
-    color: #666;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .main-header,
+    .add-expense-section,
+    .expenses-section {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .expenses-section th,
+    .expenses-section td {
+        padding: 8px;
+        font-size: 12px;
+    }
 }
