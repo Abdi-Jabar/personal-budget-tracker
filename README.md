@@ -1,45 +1,71 @@
-# Personal Budget Tracker
+# Spend Wise Dashboard
 
 ## Project Overview
-The Personal Budget Tracker is a web project designed to present income and expense information in a clear and organised layout.
+Spend Wise is a financial dashboard shell built using HTML and CSS. It provides a visual overview of financial categories using a sidebar, dashboard header and category cards.
 
-## Week 3: Visual Identity Design
-This week, I improved the visual appearance of the existing Budget Tracker using CSS.
+This project focuses on CSS Grid, Flexbox and responsive design. It does not include JavaScript functionality.
 
-### Design Improvements
+## Dashboard Components
 
-**1. Colour Palette**
-- Primary colour: Navy blue (`#16324F`)
-- Secondary colour: Blue (`#2563EB`)
-- Accent colour: Teal (`#0F766E`)
-- Background colour: Light grey (`#F4F7FA`)
-- Card colour: White (`#FFFFFF`)
+### 1. Sidebar Navigation
+The sidebar contains navigation links for:
+- Dashboard
+- Transactions
+- Categories
+- Savings
+- Reports
 
-**2. Typography**
-- Poppins for headings.
-- Inter for body text and form elements.
-- Google Fonts used to improve readability and visual consistency.
+### 2. Dashboard Header
+The header displays the dashboard title, a welcome message and account information.
 
-**3. Form and Table Styling**
-- Styled the existing expense form.
-- Added consistent input and button styling.
-- Styled the expense table with a coloured header.
-- Added alternating row colours and hover styling.
+### 3. Financial Category Cards
+The dashboard contains six cards displaying static financial information:
+- Food
+- Transport
+- Rent
+- Entertainment
+- Savings
+- Utilities
 
-**4. CSS Box Model**
-- Applied margins and padding for spacing.
-- Added borders and rounded corners.
-- Used separate card styling for the page heading, expense form and expense table.
+## CSS Layout Techniques
+
+### CSS Grid
+Grid is used to arrange the overall dashboard layout and the six financial category cards.
+
+### Flexbox
+Flexbox is used to arrange:
+- Sidebar navigation items.
+- Dashboard header content.
+- Content inside each category card.
+
+### CSS Custom Properties
+The `:root` selector defines reusable theme variables for:
+- Brand colour.
+- Accent colour.
+- Background and surface colours.
+- Primary and secondary text colours.
+
+### Responsive Design
+A media query below 768px changes the dashboard into a single-column layout for smaller screens.
+
+### Card Micro-interactions
+Dashboard cards use hover and keyboard-focus effects with `transform` and `box-shadow`. The transition duration is 200ms.
+
+### Dark Theme
+An optional dark theme is included using `prefers-color-scheme: dark` and CSS custom properties.
 
 ## Project Files
-- `index.html` – Existing page structure.
-- `style.css` – CSS visual design and styling.
-- `README.md` – Project documentation.
+- `index.html` – Contains the dashboard structure, sidebar, header and category cards.
+- `style.css` – Contains the Grid and Flexbox layouts, theme, responsive styles and card effects.
+- `README.md` – Explains the project and its components.
 
 ## Technologies Used
-- HTML
-- CSS
-- Google Fonts
+- HTML5
+- CSS3
+- CSS Grid
+- Flexbox
+- CSS Custom Properties
+- Media Queries
 
 ## Project Status
-Week 3 visual identity design completed.
+Dashboard shell implementation for the CSS Grid and Flexbox assignment.
