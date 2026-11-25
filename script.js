@@ -41,7 +41,19 @@ let utilities = Number(
 );
 
 
-// STEP 3: DISPLAY USER INPUT
+// STEP 3: PERFORM BUDGET CALCULATIONS
+
+let totalExpenses =
+    foodExpenses +
+    transportExpenses +
+    rentExpenses +
+    entertainmentExpenses +
+    utilities;
+
+let remainingBalance = monthlyBudget - totalExpenses - savings;
+
+
+// STEP 4: DISPLAY RESULTS
 
 console.log("========== " + appName + " ==========");
 
@@ -49,16 +61,10 @@ console.log("Currency:", currency);
 
 console.log("Monthly Budget:", monthlyBudget);
 
-console.log("Food Expenses:", foodExpenses);
-
-console.log("Transport Expenses:", transportExpenses);
-
-console.log("Rent Expenses:", rentExpenses);
-
-console.log("Entertainment Expenses:", entertainmentExpenses);
+console.log("Total Expenses:", totalExpenses);
 
 console.log("Savings:", savings);
 
-console.log("Utilities:", utilities);
+console.log("Remaining Balance:", remainingBalance);
 
 console.log("Budget Active:", isBudgetActive);
