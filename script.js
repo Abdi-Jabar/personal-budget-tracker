@@ -2,6 +2,7 @@
 // SPENDWISE JAVASCRIPT FOUNDATION
 // ==================================
 
+
 // STEP 1: APPLICATION VARIABLES
 
 const appName = "SpendWise";
@@ -41,25 +42,56 @@ let utilities = Number(
 );
 
 
-// STEP 3: PERFORM BUDGET CALCULATIONS
+// STEP 3: CREATE REUSABLE FUNCTIONS
 
-let totalExpenses =
-    foodExpenses +
-    transportExpenses +
-    rentExpenses +
-    entertainmentExpenses +
-    utilities;
+function calculateTotalExpenses() {
 
-let remainingBalance = monthlyBudget - totalExpenses - savings;
+    let total = foodExpenses +
+        transportExpenses +
+        rentExpenses +
+        entertainmentExpenses +
+        utilities;
+
+    return total;
+}
 
 
-// STEP 4: DISPLAY RESULTS
+function calculateRemainingBalance(budget, expenses, savingsAmount) {
+
+    let balance = budget - expenses - savingsAmount;
+
+    return balance;
+}
+
+
+// STEP 4: CALL THE FUNCTIONS
+
+let totalExpenses = calculateTotalExpenses();
+
+let remainingBalance = calculateRemainingBalance(
+    monthlyBudget,
+    totalExpenses,
+    savings
+);
+
+
+// STEP 5: DISPLAY RESULTS
 
 console.log("========== " + appName + " ==========");
 
 console.log("Currency:", currency);
 
 console.log("Monthly Budget:", monthlyBudget);
+
+console.log("Food Expenses:", foodExpenses);
+
+console.log("Transport Expenses:", transportExpenses);
+
+console.log("Rent Expenses:", rentExpenses);
+
+console.log("Entertainment Expenses:", entertainmentExpenses);
+
+console.log("Utilities:", utilities);
 
 console.log("Total Expenses:", totalExpenses);
 
