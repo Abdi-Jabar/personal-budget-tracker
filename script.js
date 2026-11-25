@@ -2,30 +2,46 @@
 // SPENDWISE JAVASCRIPT FOUNDATION
 // ==================================
 
-// 1. APPLICATION VARIABLES
+// STEP 1: APPLICATION VARIABLES
 
-// Application name
 const appName = "SpendWise";
+const currency = "KES";
 
-// Monthly budget
-let monthlyBudget = 50000;
-
-// Expense categories
-let foodExpenses = 8500;
-let transportExpenses = 3200;
-let rentExpenses = 12000;
-let entertainmentExpenses = 2500;
-let savings = 5000;
-let utilities = 1800;
-
-
-// 2. DATA TYPES
-
-let currency = "KES";
 let isBudgetActive = true;
 
 
-// 3. DISPLAY APPLICATION DATA
+// STEP 2: COLLECT USER INPUT
+
+let monthlyBudget = Number(
+    prompt("Enter your monthly budget in KES:")
+);
+
+let foodExpenses = Number(
+    prompt("Enter your food expenses in KES:")
+);
+
+let transportExpenses = Number(
+    prompt("Enter your transport expenses in KES:")
+);
+
+let rentExpenses = Number(
+    prompt("Enter your rent expenses in KES:")
+);
+
+let entertainmentExpenses = Number(
+    prompt("Enter your entertainment expenses in KES:")
+);
+
+let savings = Number(
+    prompt("Enter your savings in KES:")
+);
+
+let utilities = Number(
+    prompt("Enter your utilities expenses in KES:")
+);
+
+
+// STEP 3: DISPLAY USER INPUT
 
 console.log("========== " + appName + " ==========");
 
