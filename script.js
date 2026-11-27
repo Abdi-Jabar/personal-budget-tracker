@@ -1,10 +1,13 @@
-// ======================================
+```javascript
+// ==========================================
 // SPENDWISE - INTERACTIVE BUDGET TRACKER
-// ======================================
+// ==========================================
+
 
 // STEP 1: APPLICATION DATA
 
 const appName = "SpendWise";
+
 const monthlyBudget = 50000;
 
 
@@ -19,21 +22,23 @@ let expenses = [
 ];
 
 
-// STEP 3: CALCULATE TOTAL EXPENSES
+// STEP 3: CALCULATE TOTAL EXPENSES USING A LOOP
 
 function calculateTotalExpenses() {
 
     let total = 0;
 
     for (let expense of expenses) {
+
         total += expense.amount;
+
     }
 
     return total;
 }
 
 
-// STEP 4: DISPLAY EXPENSE RECORDS
+// STEP 4: DISPLAY EXPENSE RECORDS ON THE PAGE
 
 function displayExpenses() {
 
@@ -53,14 +58,45 @@ function displayExpenses() {
         const expenseItem = document.createElement("p");
 
         expenseItem.textContent =
-            expense.name + " - KES " + expense.amount;
+            expense.name + " - KES " + expense.amount.toLocaleString();
 
         expenseList.appendChild(expenseItem);
+
     }
 }
 
 
-// STEP 5: UPDATE DASHBOARD
+// STEP 5: BUDGET DECISION-MAKING WITH CONDITIONALS
+
+function updateBudgetMessage(remainingBalance) {
+
+    const budgetMessage = document.getElementById("budgetMessage");
+
+    if (remainingBalance < 0) {
+
+        budgetMessage.textContent =
+            "Warning: You have exceeded your monthly budget!";
+
+    } else if (remainingBalance === 0) {
+
+        budgetMessage.textContent =
+            "Your monthly budget has been fully used.";
+
+    } else if (remainingBalance <= monthlyBudget * 0.2) {
+
+        budgetMessage.textContent =
+            "Caution: Your remaining budget is getting low.";
+
+    } else {
+
+        budgetMessage.textContent =
+            "Good job! You are managing your budget well.";
+
+    }
+}
+
+
+// STEP 6: UPDATE DASHBOARD INFORMATION
 
 function updateDashboard() {
 
@@ -69,16 +105,19 @@ function updateDashboard() {
     const remainingBalance = monthlyBudget - totalExpenses;
 
     document.getElementById("totalExpenses").textContent =
-        "KES " + totalExpenses;
+        "KES " + totalExpenses.toLocaleString();
 
     document.getElementById("remainingBalance").textContent =
-        "KES " + remainingBalance;
+        "KES " + remainingBalance.toLocaleString();
+
+    updateBudgetMessage(remainingBalance);
 
     displayExpenses();
+
 }
 
 
-// STEP 6: CONNECT THE FORM TO JAVASCRIPT
+// STEP 7: CONNECT HTML FORM ELEMENTS TO JAVASCRIPT
 
 const expenseForm = document.getElementById("expenseForm");
 
@@ -87,44 +126,52 @@ const expenseNameInput = document.getElementById("expenseName");
 const expenseAmountInput = document.getElementById("expenseAmount");
 
 
+// STEP 8: ADD EVENT LISTENER TO THE FORM
+
 expenseForm.addEventListener("submit", function(event) {
 
     // Prevent the page from refreshing
     event.preventDefault();
 
-    // Get values entered by the user
+    // Get information entered by the user
     const name = expenseNameInput.value.trim();
 
     const amount = Number(expenseAmountInput.value);
 
-    // Validate user input
+
+    // Validate the entered information
     if (name === "" || !Number.isFinite(amount) || amount <= 0) {
 
         document.getElementById("budgetMessage").textContent =
-            "Please enter a valid expense name and amount greater than zero.";
+            "Please enter a valid expense name and an amount greater than zero.";
 
         return;
     }
 
+
     // Add the new expense to the array
     expenses.push({
+
         name: name,
+
         amount: amount
+
     });
 
-    // Clear the form
+
+    // Clear the form after submission
     expenseForm.reset();
 
-    // Refresh the dashboard
+
+    // Update dashboard information
     updateDashboard();
 
-    document.getElementById("budgetMessage").textContent =
-        "Expense added successfully!";
 });
 
 
-// STEP 7: INITIAL DASHBOARD DISPLAY
+// STEP 9: INITIALIZE THE APPLICATION
 
 console.log(appName + " loaded successfully!");
 
 updateDashboard();
+```
