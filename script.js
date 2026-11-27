@@ -1,102 +1,87 @@
-// ==================================
-// SPENDWISE JAVASCRIPT FOUNDATION
-// ==================================
+// ======================================
+// SPENDWISE - INTERACTIVE BUDGET TRACKER
+// ======================================
 
 
-// STEP 1: APPLICATION VARIABLES
+// STEP 1: APPLICATION DATA
 
 const appName = "SpendWise";
-const currency = "KES";
 
-let isBudgetActive = true;
-
-
-// STEP 2: COLLECT USER INPUT
-
-let monthlyBudget = Number(
-    prompt("Enter your monthly budget in KES:")
-);
-
-let foodExpenses = Number(
-    prompt("Enter your food expenses in KES:")
-);
-
-let transportExpenses = Number(
-    prompt("Enter your transport expenses in KES:")
-);
-
-let rentExpenses = Number(
-    prompt("Enter your rent expenses in KES:")
-);
-
-let entertainmentExpenses = Number(
-    prompt("Enter your entertainment expenses in KES:")
-);
-
-let savings = Number(
-    prompt("Enter your savings in KES:")
-);
-
-let utilities = Number(
-    prompt("Enter your utilities expenses in KES:")
-);
+const monthlyBudget = 50000;
 
 
-// STEP 3: CREATE REUSABLE FUNCTIONS
+// STEP 2: STORE EXPENSES IN AN ARRAY
+
+let expenses = [
+    { name: "Food", amount: 8500 },
+    { name: "Transport", amount: 3200 },
+    { name: "Rent", amount: 12000 },
+    { name: "Entertainment", amount: 2500 },
+    { name: "Utilities", amount: 1800 }
+];
+
+
+// STEP 3: CALCULATE TOTAL EXPENSES USING A LOOP
 
 function calculateTotalExpenses() {
 
-    let total = foodExpenses +
-        transportExpenses +
-        rentExpenses +
-        entertainmentExpenses +
-        utilities;
+    let total = 0;
+
+    for (let expense of expenses) {
+        total += expense.amount;
+    }
 
     return total;
 }
 
 
-function calculateRemainingBalance(budget, expenses, savingsAmount) {
+// STEP 4: DISPLAY EXPENSE RECORDS USING DOM MANIPULATION
 
-    let balance = budget - expenses - savingsAmount;
+function displayExpenses() {
 
-    return balance;
+    const expenseList = document.getElementById("expenseList");
+
+    expenseList.innerHTML = "";
+
+    if (expenses.length === 0) {
+
+        expenseList.textContent = "No expenses added yet.";
+
+        return;
+    }
+
+    for (let expense of expenses) {
+
+        const expenseItem = document.createElement("p");
+
+        expenseItem.textContent =
+            expense.name + " - KES " + expense.amount;
+
+        expenseList.appendChild(expenseItem);
+    }
 }
 
 
-// STEP 4: CALL THE FUNCTIONS
+// STEP 5: UPDATE DASHBOARD
 
-let totalExpenses = calculateTotalExpenses();
+function updateDashboard() {
 
-let remainingBalance = calculateRemainingBalance(
-    monthlyBudget,
-    totalExpenses,
-    savings
-);
+    let totalExpenses = calculateTotalExpenses();
+
+    let remainingBalance = monthlyBudget - totalExpenses;
+
+    document.getElementById("totalExpenses").textContent =
+        "KES " + totalExpenses;
+
+    document.getElementById("remainingBalance").textContent =
+        "KES " + remainingBalance;
+
+    displayExpenses();
+}
 
 
-// STEP 5: DISPLAY RESULTS
+// STEP 6: INITIAL DASHBOARD DISPLAY
 
-console.log("========== " + appName + " ==========");
+console.log(appName + " loaded successfully!");
 
-console.log("Currency:", currency);
-
-console.log("Monthly Budget:", monthlyBudget);
-
-console.log("Food Expenses:", foodExpenses);
-
-console.log("Transport Expenses:", transportExpenses);
-
-console.log("Rent Expenses:", rentExpenses);
-
-console.log("Entertainment Expenses:", entertainmentExpenses);
-
-console.log("Utilities:", utilities);
-
-console.log("Total Expenses:", totalExpenses);
-
-console.log("Savings:", savings);
-
-console.log("Remaining Balance:", remainingBalance);
-
-console.log("Budget Active:", isBudgetActive);
+updateDashboard();
