@@ -1,4 +1,3 @@
-```javascript
 // ==========================================
 // SPENDWISE - INTERACTIVE BUDGET TRACKER
 // ==========================================
@@ -174,4 +173,3 @@ expenseForm.addEventListener("submit", function(event) {
 console.log(appName + " loaded successfully!");
 
 updateDashboard();
-```
