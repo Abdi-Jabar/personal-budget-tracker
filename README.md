@@ -131,3 +131,31 @@ It starts with sample expense records to demonstrate the calculations and intera
 SpendWise demonstrates how JavaScript can make a website interactive through arrays, loops, conditional statements, DOM manipulation, and event listeners.
 
 The project connects user actions with JavaScript logic and automatically updates the dashboard.
+
+## Deployment and Hosting
+
+SpendWise is deployed and hosted using Netlify.
+
+### GitHub Repository
+https://github.com/Abdi-Jabar/personal-budget-tracker
+
+### Live Website
+https://personal-budget-tracker-07ic.netlify.app/
+
+### Deployment Process
+1. Stored the SpendWise project files in a GitHub repository.
+2. Connected the GitHub repository to Netlify.
+3. Selected the main branch for deployment.
+4. Configured Netlify to publish the root directory.
+5. Deployed the website successfully.
+6. Enabled automatic deployment whenever changes are committed to GitHub.
+
+### Challenges Encountered
+Document any deployment difficulties experienced and how they were resolved.
+
+### Lessons Learned
+- How to host a website using Netlify.
+- How to connect GitHub to Netlify.
+- How continuous deployment works.
+- How to test a live website.
+- How to maintain a deployed web application.
