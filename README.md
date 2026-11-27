@@ -1,103 +1,133 @@
-# SpendWise – Budget Tracker
+# SpendWise – Interactive Budget Tracker
 
-## 1. Project Overview
+## Project Overview
 
-SpendWise is a personal budget tracking application developed using HTML, CSS and JavaScript.
+SpendWise is an interactive budget tracking application built using HTML, CSS, and JavaScript.
 
-The application collects monthly budget and expense information from users, calculates total expenses and determines the remaining budget.
+The application allows users to add expenses, calculate total spending, monitor their remaining monthly budget, and receive budget status messages.
 
-This project introduces JavaScript concepts for processing budgeting information.
+## Improvements Made This Week
 
-## 2. JavaScript Concepts Implemented
+The main improvement was transforming SpendWise from a static dashboard into an interactive application.
 
-The following JavaScript concepts are implemented:
+The following features were implemented:
 
-- Variables and constants.
-- JavaScript data types.
-- User input using `prompt()`.
-- Number conversion using `Number()`.
-- Arithmetic calculations.
-- Reusable functions.
-- Function parameters and return values.
-- Output using `console.log()`.
+- Added an interactive expense form.
+- Added JavaScript arrays to store multiple expense records.
+- Implemented loops to calculate total expenses and display records.
+- Added conditional statements for budget decision-making.
+- Implemented DOM manipulation to update dashboard information.
+- Added event listeners to respond to form submissions.
+- Added input validation to prevent invalid expense entries.
+- Updated the dashboard automatically whenever a new expense is added.
 
-## 3. How Variables Are Used
+## JavaScript Concepts Used
 
-Variables store the budgeting information used by SpendWise.
+### 1. Conditional Statements
 
-Examples include:
+Conditional statements (`if`, `else if`, and `else`) were used to monitor the remaining budget.
 
-- `monthlyBudget` – stores the user's monthly budget.
-- `foodExpenses` – stores food expenses.
-- `transportExpenses` – stores transport expenses.
-- `rentExpenses` – stores rent expenses.
-- `entertainmentExpenses` – stores entertainment expenses.
-- `savings` – stores the savings allocation.
-- `utilities` – stores utility expenses.
+The application displays different messages depending on the user's budget status:
 
-The application also uses constants to store the application name and currency.
+- Warning when expenses exceed the monthly budget.
+- A message when the entire budget has been used.
+- A caution message when 20% or less of the budget remains.
+- A positive message when the remaining budget is above 20%.
 
-## 4. How User Input Is Collected
+### 2. Arrays
 
-SpendWise uses JavaScript's `prompt()` function to collect the monthly budget and expense information.
+An array called `expenses` stores multiple expense records.
 
-The `Number()` function converts the entered values into numbers so that JavaScript can perform calculations.
+Each record is represented by an object containing:
 
-## 5. How Calculations Are Performed
+- Expense name
+- Expense amount
 
-The application calculates total expenses by adding:
+The `push()` method adds new expense records to the array.
 
-- Food expenses.
-- Transport expenses.
-- Rent expenses.
-- Entertainment expenses.
-- Utilities.
+### 3. Loops
 
-The remaining balance is calculated by subtracting total expenses and savings from the monthly budget.
+A `for...of` loop processes expense records.
 
-**Formula:**
+It is used to:
 
-Remaining Balance = Monthly Budget − Total Expenses − Savings
+- Calculate total expenses.
+- Display all expense records on the dashboard.
 
-## 6. How Functions Organize the Code
+### 4. DOM Manipulation
 
-SpendWise uses reusable functions to organize its budgeting calculations.
+DOM manipulation connects JavaScript with HTML elements.
 
-### calculateTotalExpenses()
+The application uses methods such as:
 
-Adds the expense categories and returns the total expenses.
+- `getElementById()` to access HTML elements.
+- `createElement()` to create expense records.
+- `appendChild()` to display records.
+- `textContent` to update dashboard information.
 
-### calculateRemainingBalance()
+### 5. Events and User Interaction
 
-Accepts the monthly budget, total expenses and savings as parameters. It calculates and returns the remaining balance.
+An event listener detects when a user submits the expense form.
 
-These functions make the calculation code reusable and easier to understand.
+The application uses:
 
-## 7. Displaying Results
+- `addEventListener()` to detect form submissions.
+- `preventDefault()` to prevent page refresh.
+- `expenses.push()` to store new expenses.
+- `updateDashboard()` to refresh the displayed information.
+- `reset()` to clear the form after submission.
 
-The application uses `console.log()` to display clearly labelled budgeting information in the browser console.
+## Challenges and Solutions
 
-Displayed information includes:
+### Challenge 1: Connecting the HTML Form to JavaScript
 
-- Monthly budget.
-- Individual expense categories.
-- Total expenses.
-- Savings.
-- Remaining balance.
+The form needed to communicate with JavaScript when a user submitted an expense.
 
-## 8. Project Files
+**Solution:** An event listener was added to detect form submissions and process the entered information.
 
-- `index.html` – Contains the SpendWise dashboard structure and links the JavaScript file.
-- `style.css` – Contains the dashboard styling and layout.
-- `script.js` – Contains variables, user input, calculations and reusable functions.
-- `README.md` – Documents the project and JavaScript concepts.
+### Challenge 2: Updating Expense Records Automatically
 
-## 9. Technologies Used
+New expenses needed to appear on the dashboard without manually editing the HTML.
+
+**Solution:** DOM manipulation was implemented using `createElement()`, `appendChild()`, and `textContent`.
+
+### Challenge 3: Monitoring the Monthly Budget
+
+The application needed to identify different budget situations.
+
+**Solution:** Conditional statements were implemented to display messages based on the remaining balance.
+
+## Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript
+- GitHub
 
-## 10. Project Status
+## Project Files
 
-JavaScript foundation for the SpendWise budget tracker assignment.
+| File | Description |
+|---|---|
+| `index.html` | Provides the dashboard structure and expense form. |
+| `style.css` | Controls the appearance and layout of the application. |
+| `script.js` | Handles calculations, expense records, events, and dashboard updates. |
+| `README.md` | Documents the project and its functionality. |
+
+## Monthly Budget
+
+The application uses an example monthly budget of KES 50,000.
+
+It starts with sample expense records to demonstrate the calculations and interactive features.
+
+## Future Improvements
+
+- Save expense records between page refreshes.
+- Add expense categories.
+- Allow users to delete expense records.
+- Add monthly spending reports.
+
+## Conclusion
+
+SpendWise demonstrates how JavaScript can make a website interactive through arrays, loops, conditional statements, DOM manipulation, and event listeners.
+
+The project connects user actions with JavaScript logic and automatically updates the dashboard.
